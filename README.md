@@ -1,2 +1,2 @@
-# NDC Sydney 2017
-Samples for NDC Sydney 2017
+# SecAppDev 2018
+Samples for SecAppDev 2018
