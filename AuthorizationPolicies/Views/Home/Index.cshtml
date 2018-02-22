@@ -1,0 +1,55 @@
+﻿@model AuthorizationPolicies.Model.HomeViewModel
+@{
+    ViewData["Title"] = "Select your condiment";
+}
+
+<div class="hero-unit text-center">
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <h1>Select your condiment</h1>
+    }
+    else
+    {
+        <h1>Select your condiment @User.Identity.Name</h1>
+    }
+
+    <h2>
+        Condiment:
+        <a href="@Url.Action("CondimentPicker")">
+            @switch (Model.Condiment)
+            {
+                case AuthorizationPolicies.Condiment.Ketchup:
+                    <span>🍅</span>
+                    break;
+                case AuthorizationPolicies.Condiment.Mayo:
+                    <span>🥚</span>
+                    break;
+                case AuthorizationPolicies.Condiment.Cilli:
+                    <span>🌶</span>
+                    break;
+                default:
+                    break;
+            }
+        </a>
+    </h2>
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>🍟</h2>
+        <form asp-Controller="Food" asp-action="Index" method="get">
+            <button type="submit" class="btn btn-warning btn-primary">
+                Dip
+            </button>
+        </form>
+    </div>
+</div>
+
+@if (TempData["Result"] != null && (bool)TempData["Result"] == true)
+{
+    <br />
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Yum!</strong>
+    </div>
+}

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Select your login";
+}
+
+<div class="hero-unit">
+    <h1>Login</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <a asp-controller="Account" asp-action="LoginPicker" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-nationality="GBR" asp-route-name="Hugh Grant">
+            <img src="~/images/hughgrant.png" alt="Hugh Grant" title="Hugh Grant" height="211"/>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-controller="Account" asp-action="LoginPicker" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-nationality="USA" asp-route-name="American Tourist" asp-route-hair="Ginger">
+            <img src="~/images/American.jpg" alt="Tourist" title="American Tourist" />
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-controller="Account" asp-action="LoginPicker" asp-route-returnurl="@ViewData["ReturnUrl"]" asp-route-nationality="BEL" asp-route-name="Tintin" asp-route-hair="Blonde">
+            <img src="~/images/tintin.jpg" alt="Tintin" title="Tintin" />
+        </a>
+    </div>
+</div>

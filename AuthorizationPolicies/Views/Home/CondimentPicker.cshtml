@@ -1,0 +1,37 @@
+﻿@model AuthorizationPolicies.Model.HomeViewModel
+@{
+    ViewData["Title"] = "Pick your condiment";
+}
+
+<div class="hero-unit text-center">
+    <h1>
+        Condiment:
+@switch (Model.Condiment)
+{
+    case AuthorizationPolicies.Condiment.Ketchup:
+        <span>🍅</span>
+        break;
+    case AuthorizationPolicies.Condiment.Mayo:
+        <span>🥚</span>
+        break;
+    case AuthorizationPolicies.Condiment.Cilli:
+        <span>🌶</span>
+        break;
+    default:
+        break;
+}
+    </h1>
+    <h2>Switch up your condiment:</h2>
+    <form method="post">
+        <h2>
+        <label class="radio-inline"><input type="radio" name="condiment" value="@AuthorizationPolicies.Condiment.Ketchup">🍅</label>
+        <label class="radio-inline"><input type="radio" name="condiment" value="@AuthorizationPolicies.Condiment.Mayo">🥚</label>
+        <label class="radio-inline"><input type="radio" name="condiment" value="@AuthorizationPolicies.Condiment.Cilli">🌶</label>
+            </h2>
+        <br />
+        <button type="submit" class="btn btn-primary">
+            Change Condiment
+        </button>
+    </form>
+</div>
+
